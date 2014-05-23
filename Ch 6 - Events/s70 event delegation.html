@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <style>
+      li {
+         border-color : grey;
+         border-width : 1px;
+         border-style : solid;
+      }
+   </style>
+   <ul>
+      <li><a href="#">remove</a></li>
+      <li><a href="#">remove</a></li>
+      <li><a href="#">remove</a></li>
+      <li><a href="#">remove</a></li>
+      <li><a href="#">remove</a></li>
+      <li><a href="#">remove</a></li>
+   </ul>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var uLists = $('ul');
+
+      uLists.click(
+            function(event)
+            {
+               var targetsParent = $(event.target).parent('li');
+               if (targetsParent.length)
+               {
+                  targetsParent.remove();// remove <li>
+
+                  log('element removed');
+               }
+               return false;
+            }
+      );
+
+   </script>
+
+</body>
+</html>

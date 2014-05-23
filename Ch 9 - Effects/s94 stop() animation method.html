@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div style="height: 100px; width: 100px; background-color: red; position: absolute;
+left: 20px;">
+      Hover over Me!
+   </div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $('div').hover(
+               function()
+               {
+                  $(this).stop().animate({left: 75}, 'fast');
+//                  $(this).animate({left: 75}, 'fast');
+               },
+               function()
+               {
+                  $(this).stop().animate({left: 20}, 'fast');
+//                  $(this).animate({left: 20}, 'fast');
+               }
+         );
+      })(jQuery);
+   </script>
+
+</body>
+</html>

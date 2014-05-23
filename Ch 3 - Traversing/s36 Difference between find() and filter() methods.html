@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <p><strong>first</strong></p>
+
+   <p>middle</p>
+
+   <p><strong>last</strong></p>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+      var middleP = $('p').filter(':not(:first):not(:last)');
+      log(middleP.text());
+
+      log($('p').find('strong').get(0).nodeName);
+   </script>
+
+</body>
+</html>

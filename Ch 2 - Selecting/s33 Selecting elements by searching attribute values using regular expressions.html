@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="123"></div>
+   <div id="oneTwoThree"></div>
+   <div id="0"></div>
+   <div id="zero"></div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      //James Padolsey filter extension.
+      jQuery.expr[':'].regex = function(elem, index, match)
+      {
+         var matchParams = match[3].split(','), validLabels = /^(data|css):/, attr = {
+            method: matchParams[0].match(validLabels) ? matchParams[0].split(':')[0] : 'attr',
+            property: matchParams.shift().replace(validLabels, '') }, regexFlags = 'ig', regex = new
+               RegExp(matchParams.join('').replace(/^\s+|\s+$/g, ''), regexFlags);
+         return regex.test(jQuery(elem)[attr.method](attr.property));
+      };
+      var body = $('body');
+      var divs = $('div');
+
+      // id attribute contains numbers
+      log(divs.filter(':regex(id, [0-9])').length + " 'div:regex(id, [0-9])'");
+
+      // id attr contains "Two"
+      log(divs.filter(':regex(id, Two)').length + " 'div:regex(id, Two)'");
+
+   </script>
+
+</body>
+</html>

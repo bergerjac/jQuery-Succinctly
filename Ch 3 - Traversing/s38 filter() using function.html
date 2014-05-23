@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <img/>
+   <img/>
+
+   <p>
+      <img/>
+   </p>
+   <img/>
+
+   <p>
+      <img/>
+   </p>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+      // set all img src's; img's NOT within <p> -> add to <p>
+      $('img')
+            .attr(
+                  'src',
+                  'http://jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png')
+            .css('background', 'rgb(7, 105, 173)')
+            .filter(function()
+                    {
+                       var imgWop = !($(this).parent('p').length === 1);
+                       log(imgWop);
+                       return imgWop;
+                    })
+            .wrap('<p></p>');
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <p>I love using jQuery!</p>
+
+   <p>I love <strong>really</strong> using jQuery!</p>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var allP = $('p');
+      var lastPcontents = allP.last().contents();
+      log(
+            // "I love using jQuery!" <- no HTML elements exist
+            allP.first().contents().get(0).nodeValue
+
+            // "I love"
+            , lastPcontents.get(0).nodeValue
+
+            // "really" (HTML element NOT text)
+            , lastPcontents.eq(1).text()
+
+            // "using jQuery!"
+            , lastPcontents.get(2).nodeValue
+      );
+
+
+   </script>
+
+</body>
+</html>

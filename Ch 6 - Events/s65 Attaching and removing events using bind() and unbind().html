@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <input type="text" value="click me"/>
+   <br/>
+   <br/>
+   <button>remove events</button>
+   <div id="log" name="log"></div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var inputs = $('input');
+
+      inputs.bind('click', function()
+      {
+         log('clicked');
+      });
+      inputs.bind('focus', function()
+      {
+         log('focused')
+      });
+      $('button').click(
+            function()
+            {
+               inputs.unbind('click');
+               inputs.unbind('focus');
+               inputs.one(
+                     'click',
+                     function()
+                     {
+                        log('one-timer');
+                     });
+            }
+      );
+
+   </script>
+
+</body>
+</html>

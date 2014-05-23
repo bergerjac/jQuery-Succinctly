@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="parent2">
+      <div id="parent1">
+         <div id="parent0">
+            <div id="start"></div>
+         </div>
+      </div>
+   </div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+      var start = $('#start');
+
+      var parentOfStart = start.parent();
+      var parent0 = start.parents('#parent0');
+
+      // "parent0" x4
+      log(parentOfStart.attr('id'));
+      log(parent0.attr('id'));
+      log(start.parents()[0].id); // gets actual DOM element
+      log(start.closest('#parent0').attr('id'));
+
+      log('\0');
+
+      // "parent1" x4
+      log(start.parent().parent().attr('id'));
+      log(start.parents('#parent1').attr('id'));
+      log(start.parents()[1].id);// gets actual DOM element
+      log(start.closest('#parent1').attr('id'));
+
+      log('\0');
+
+      // "parent2" x4
+      log(start.parent().parent().parent().attr('id'));
+      log(start.parents('#parent2').attr('id'));
+      log(start.parents()[2].id);// gets actual DOM element
+      log(start.closest('#parent2').attr('id'));
+
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+      $(document).mousemove(
+            function(event)
+            {
+               body.html(
+                     'X: {0}<br>Y: {1}'
+                           .format(event.pageX, event.pageY));
+            }
+      );
+
+   </script>
+
+</body>
+</html>

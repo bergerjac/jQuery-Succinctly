@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <select id="s" name="s">
+      <option value="option1">option one</option>
+      <option value="option2">option two</option>
+   </select>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var elements = $('select');
+
+      elements.each(
+            function()
+            {
+               log("initial: " + $(this).val());
+               $(this).val('option2');
+               log("set val: " + $(this).val());
+
+            }
+      );
+      log("");
+
+   </script>
+
+</body>
+</html>

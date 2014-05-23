@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <select size="4" multiple="multiple">
+      <option value="option1">option one</option>
+      <option value="option2">option two</option>
+      <option value="option3">option three</option>
+      <option value="option4">option four</option>
+   </select>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var selects = $('select');
+
+      selects.val(['option2', 'option4']);
+
+      log("selected: " + selects.val().join(', '));
+   </script>
+
+</body>
+</html>

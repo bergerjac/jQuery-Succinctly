@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<span>
+   <a href="javascript:log('You clicked me!')" class="link">click me</a>
+</span>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var spans = $('span');
+
+      spans.click(
+            function()
+            {
+               window.location = 'http://jquery.com';
+            }
+      );
+      $('a').click(
+            function()
+            {
+               log("anchors clicked");
+               return false;// === preventDefault() and stopPropagation()
+            }
+      );
+
+   </script>
+
+</body>
+</html>

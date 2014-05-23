@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="#element[last]">id="#element[last]" jq</div>
+   <ul>
+      <li>#</li>
+      <li>;</li>
+      <li>&</li>
+      <li>,</li>
+      <li>.</li>
+      <li>+</li>
+      <li>*</li>
+      <li>~</li>
+      <li>'</li>
+      <li>:</li>
+      <li>"</li>
+      <li>!</li>
+      <li>^</li>
+      <li>$</li>
+      <li>[</li>
+      <li>]</li>
+      <li>(</li>
+      <li>)</li>
+      <li>=</li>
+      <li>></li>
+      <li>|</li>
+      <li>/</li>
+   </ul>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var elements = $('#\\#element\\[last\\]');
+      log(elements.text());
+
+   </script>
+
+</body>
+</html>

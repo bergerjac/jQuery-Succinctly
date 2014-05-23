@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<textarea></textarea>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      newestLogFirst = true;
+      $(window).on(
+            'keypress click keydown resize hover',
+            function(event)
+            {
+               log("type: " + event.type + ", which: " + event.which);
+            }
+      );
+
+   </script>
+
+</body>
+</html>

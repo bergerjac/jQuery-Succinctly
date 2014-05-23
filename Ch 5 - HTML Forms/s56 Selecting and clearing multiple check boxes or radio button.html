@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <input type="radio" value="radio1">
+   <input type="radio" value="radio2">
+   <input type="checkbox" value="checkbox1">
+   <input type="checkbox" value="checkbox2">
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var elements = $('input')
+            .filter(':radio, :checkbox');
+
+      elements.click(function() {
+         elements.off('click');
+         elements.val([
+                          'radio1',
+                          'radio2',
+                          'checkbox1',
+                          'checkbox2'
+                       ]);
+      });
+      //window.setTimeout(function() {elements.removeAttr('checked');}, 2000);
+
+
+   </script>
+
+</body>
+</html>

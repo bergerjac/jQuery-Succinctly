@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var div = $('<div><a></a></div>');
+
+      log(div.get(0).nodeName);// "DIV"
+      log(div.length);// "1"
+      log($('<div>' +
+            '<a></a></div>' +
+            '<div>' +
+            '<a></a>' +
+            '</div>').length);
+
+      body.prepend($('<div><a></a></div>')
+            .find('a')
+            .text('jQuery')
+            .attr('href', 'http://www.jquery.com')
+            .end());
+   </script>
+
+</body>
+</html>

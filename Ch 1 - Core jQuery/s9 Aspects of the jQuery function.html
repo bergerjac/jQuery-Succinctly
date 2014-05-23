@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script>
+    jQuery(
+            function($)
+            {// pass jq a fn
+                $('<p></p>').appendTo('body');// give jq an html string
+                $(document.createElement('a'))// give jq an element ref
+                        .text('jQuery')
+                        .appendTo('p');
+                $('a:first').attr('href', 'http://jquery.com');// give jq a CSS expression
+                $(document.anchors[0]).attr('jQuery');// give jq a DOM ref
+            }
+
+    );
+</script>
+
+</body>
+</html>

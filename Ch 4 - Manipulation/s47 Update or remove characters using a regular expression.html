@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <p>
+      I really hate using JavaScript.
+      I mean really hate it! It is the best twister ever!
+   </p>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var p = $('p');
+      p.text(p.text().replace(/hate/ig, 'love'));
+      p.text(p.text().replace(/twister/ig, ''));
+
+   </script>
+
+</body>
+</html>

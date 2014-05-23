@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <h3>Event object attributes</h3>
+   <ul>
+      <li>event.type</li>
+      <li>event.target</li>
+      <li>event.data</li>
+      <li>event.relatedTarget</li>
+      <li>event.currentTarget</li>
+      <li>event.pageX</li>
+      <li>event.pageY</li>
+      <li>event.result</li>
+      <li>event.timeStamp</li>
+   </ul>
+   <h3>Event object methods</h3>
+   <ul>
+      <li>event.preventDefault()</li>
+      <li>event.isDefaultPrevented()</li>
+      <li>event.stopPropagation()</li>
+      <li>event.isPropagationStopped()</li>
+      <li>event.stopImmediatePropagation()</li>
+      <li>event.isImmediatePropagationStopped()</li>
+   </ul>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      $(window).load(function(event)
+                     {
+                        log(event.type);
+                     }); // logs "load".
+
+   </script>
+
+</body>
+</html>

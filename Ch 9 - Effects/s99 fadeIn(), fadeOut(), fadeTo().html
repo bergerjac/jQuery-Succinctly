@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <!-- Elements being faded should have a width and height -->
+   <div style="height: 100px; width: 100px; background-color: #ff7c72;"></div>
+   <button>Fade the rest of the way</button>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $('div').fadeTo('slow', 0.50);
+         $('button').click(
+               function()
+               {// fade from current opacity -> 0, then hide
+                  $('div').fadeOut('slow', function()
+                  {
+                     $(this).show();
+                  });
+               }
+         );
+      })(jQuery);
+   </script>
+
+</body>
+</html>

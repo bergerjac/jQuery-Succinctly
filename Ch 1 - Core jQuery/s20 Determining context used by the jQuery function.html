@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<div>
+    <div>
+        <div id="context">
+            <a href="#">jQuery</a>
+        </div>
+    </div>
+</div>
+
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script>
+    var body = $('body');
+    var allAnchors = $('a');
+    body.append(// > [object HTMLDocument]
+            '<br>' + allAnchors.context);
+    var firstContextId = $('#context')[0];
+    body.append(// > [object HTMLDivElement]
+            '<br>' + $('a', firstContextId).context
+    );
+</script>
+
+</body>
+</html>

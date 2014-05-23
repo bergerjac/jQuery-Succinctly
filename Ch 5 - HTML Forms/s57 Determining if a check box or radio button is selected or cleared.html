@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <input checked="checked" type="checkbox"/>
+   <input checked="checked" type="radio"/>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var inputs = $('input');
+      var checkboxes = inputs.filter(':checkbox');
+      var radios = inputs.filter(':radio');
+
+      log(// true, 1, true 1
+            checkboxes.is(':checked')
+            ,checkboxes.filter(':checked').length
+            ,radios.is(':checked')
+            , radios.filter(':checked').length
+      );
+
+   </script>
+
+</body>
+</html>

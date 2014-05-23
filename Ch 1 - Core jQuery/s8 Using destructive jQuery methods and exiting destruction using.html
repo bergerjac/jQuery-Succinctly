@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<style>
+    .last {
+        background : #900;
+    }
+</style>
+<ul id="list">
+    <li></li>
+    <li>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script>
+    (function($)
+    {
+        $('#list')// wrapper
+                .find('> li') // destory
+                    .filter(':last')//destroy
+                        .addClass('last')
+                    .end()// end .filter
+                    .find('ul')//destroy
+                        .css('background', '#ccc')
+                        .find('li:last')// destroy
+                            .addClass('last')
+                        .end() // End .find('li:last')
+                    .end() // End .find('ul')
+                .end() // End .find('> li')
+                .find('li') // Back to the orginal
+                    .append("I'm an &lt;li&gt;");
+    })(jQuery);
+</script>
+
+</body>
+</html>

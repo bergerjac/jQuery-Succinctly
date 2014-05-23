@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   forgot html
+
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      $(window).bind(
+            'resize',
+            function()
+            {
+               log('resized from NO namespace');
+            });
+      $(window).bind(
+            'resize.example-namespace',
+            function()
+            {
+               log("resize from namespace");
+               $(window).unbind('resize.example-namespace');
+            }
+      );
+
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <style>
+      #button:disabled{
+         background-color: #793839;
+      }
+   </style>
+   <input name="button" type="button" id="button" value="Click me"/>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var button = $('#button');
+      button.click(
+            function()
+            {
+               $(this)
+                     .attr('disabled', 'disabled');
+               window.setTimeout(
+                     function()
+                     {
+                        button.removeAttr('disabled');
+                     }, 1000);
+            }
+      );
+
+   </script>
+
+</body>
+</html>

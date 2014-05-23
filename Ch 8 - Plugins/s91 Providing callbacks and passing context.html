@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div>Out And In Fade</div>
+   <div>Out And In Fade</div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $.fn.outAndInFade = function(customOptions)
+         {
+            var options = $.extend({}, $.fn.outAndInFade.defaultOptions, customOptions || {});
+            return this.each(
+                  function()
+                  {
+                     $(this).fadeOut().fadeIn(
+                           'normal',
+                           function()
+                           { // fadeIn() callback
+                              // Call complete() function, pass it "this".
+                              if ($.isFunction(options.complete))
+                              {
+                                 options.complete.apply(this);
+                              }
+                           }
+                     );
+                  }
+            );
+         };
+         $.fn.outAndInFade.defaultOptions = {
+            complete: null // No default function.
+         };
+         $('div').click(
+               function()
+               {
+                  $(this).css('background', 'transparent');
+                  $(this).outAndInFade(
+                        {
+                           complete: function()
+                           {
+                              $(this).css('background', '#ff9');
+                           }
+                        }
+                  );
+               }
+         ).trigger('click');
+
+      })(jQuery);
+   </script>
+
+</body>
+</html>

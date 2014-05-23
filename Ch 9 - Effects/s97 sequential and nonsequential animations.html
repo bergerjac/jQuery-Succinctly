@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+   <style>
+      div {
+         height           : 100px;
+         width            : 100px;
+         background-color : #ffa5a2;
+         display          : block;
+         position         : absolute;
+         left             : 20px;
+         border           : 1px solid #ff9933;
+      }
+      .ex2 {
+         top : 100px;
+      }
+      .ex3 {
+         top : 200px;
+      }
+   </style>
+</head>
+<body>
+   <div class="sequential">
+      sequential
+   </div>
+   <div class="sequential ex2">
+      sequential
+   </div>
+   <div class="non-sequential ex3">non-sequential</div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         var $div = $('div');
+         var sequentials = $div.filter('.sequential');
+         sequentials.filter(':first')
+               .slideUp('slow')
+               .slideDown('slow')
+               .hide('slow');
+         sequentials.filter(':last').text('width')
+               .animate({width: '200px', text: 'width'},
+                        1000, function() {$(this).text('border width');})
+               .animate({borderLeftWidth: '10px'});
+         $div.filter('.non-sequential').animate({width: '200px', borderLeftWidth: '10px'}, 1000);
+      })(jQuery);
+   </script>
+
+</body>
+</html>

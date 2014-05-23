@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <a href="#" title="Hi">dialog, say hi</a>
+   <br>
+   <a href="#" title="Bye">dialog, say bye</a>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $.fn.dialog = function(options)
+         {
+            var text = this.attr('title') || this.text();
+            log(text);
+         };
+
+         $('a').click(
+               function()
+               {
+                  $(this).dialog();
+                  return false;
+               }
+         );
+         $(window).load(
+               function()
+               {// runs immediately on window load
+                  $('<a></a>').attr('title', '"hi" when invoked').dialog();
+               }
+         );
+      })(jQuery);
+   </script>
+
+</body>
+</html>

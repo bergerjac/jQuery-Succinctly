@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<p></p>
+
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script>
+    (function($)
+    {
+        var theText = $('p').text('jQuery').text(); // Returns the string "jQuery".
+        console.log(theText);
+        // Cannot chain after text(). The chain is broken.
+        // A string is returned, not the jQuery object.
+    })(jQuery)
+</script>
+
+</body>
+</html>

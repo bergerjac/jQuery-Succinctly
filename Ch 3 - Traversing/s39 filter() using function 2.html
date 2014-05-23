@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <ul>
+      <li>jQuery is great.</li>
+      <li>It’s lightweight.</li>
+      <li>Its free!</li>
+      <li>jquery makes everything simple.</li>
+   </ul>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var pattern = /jQuery/i;// regex, ignore case
+      var elements = $('ul li')
+            .filter(function()
+                    {// return elements with text matching regex
+                       var hasPattern = pattern.test($(this).text());
+                       if (hasPattern)
+                       {
+                          log($(this).text())
+                       }
+                       return  hasPattern;
+                    })
+            .wrap('<strong></strong>');
+      // jQuery is great.
+      // jquery makes everything simple.
+
+   </script>
+
+</body>
+</html>

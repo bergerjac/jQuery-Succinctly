@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <button>Add another button</button>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var btnN = 0;
+      var body = $('body');
+      body.on(
+            'click',
+            'button',
+            function(event)
+            {
+               btnN += 1;
+               log("clicked: "+event.target.id);
+               $(this).after(
+                     '<button id="button{0}">add another button</button>'
+                           .format(btnN)
+               );
+            });
+
+   </script>
+
+</body>
+</html>

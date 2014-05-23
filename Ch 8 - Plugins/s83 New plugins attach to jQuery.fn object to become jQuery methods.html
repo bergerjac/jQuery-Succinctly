@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="counter1"></div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         var counter = 0;
+         $.fn.count = function()
+         {
+            var jqob = $(this);
+            jqob.text('0');
+            var myInterval = window.setInterval(
+                  function()
+                  {
+                     counter += 1;
+                     jqob.text(counter + '');
+                  },
+                  1000
+            );
+         };
+         $('#counter1').count();
+      })(jQuery);
+   </script>
+
+</body>
+</html>

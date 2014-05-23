@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div style="height: 100px; width: 100px; background-color: red; position: absolute;
+left: 20px;">Try to animate me!
+   </div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         jQuery.fx.off = true;
+         var $divs = $('div');
+         $divs.slideUp();// does NOT animate; hides immediately
+         jQuery.fx.off = false;
+         $divs.slideDown();
+      })(jQuery);
+   </script>
+
+</body>
+</html>

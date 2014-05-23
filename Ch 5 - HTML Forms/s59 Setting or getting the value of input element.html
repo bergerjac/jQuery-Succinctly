@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <input type="button"/>
+   <input type="checkbox"/>
+   <input type="hidden"/>
+   <input type="image"/>
+   <input type="password"/>
+   <input type="radio"/>
+   <input type="reset"/>
+   <input type="submit"/>
+   <input type="text"/>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var inputs = $('input');
+
+      var inputTypes = [
+         "button",
+         "checkbox",
+         "hidden",
+         "image",
+         "password",
+         "radio",
+         "reset",
+         "submit",
+         "text"
+      ];
+      $.each(inputTypes,
+            function(i, inputType)
+            {
+               var expr = ':' + inputType;
+               inputs.filter(expr)
+                     .each(function(j, input)
+                           {
+                              var ima = "I'm a " + inputType;
+                              log(ima);
+                              $(input).val(ima);
+                              log("val: "+$(input).val());
+                           })
+
+            }
+      );
+
+   </script>
+
+</body>
+</html>

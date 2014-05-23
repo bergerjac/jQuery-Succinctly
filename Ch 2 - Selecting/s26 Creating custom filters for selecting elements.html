@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+</head>
+<body>
+<div style="position: absolute">absolute</div>
+<span style="position: absolute">absolute</span>
+
+<div>static</div>
+<div style="position: absolute">absolute</div>
+<div>static</div>
+<span style="position: absolute">absolute</span>
+
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script src="../js/main.js"></script>
+
+<script>
+    var body = $('body');
+    $.expr[':'].positionAbsolute = function(element)
+    {
+        return $(element).css('position') === 'absolute';
+    };
+
+    var elementsAbsPosition = $(':positionAbsolute');
+    log(elementsAbsPosition.length);
+
+    elementsAbsPosition.each(
+            function(i, element)
+            {
+                log(i + ':' + $(this).text());
+            }
+    );
+
+    log("div:positionAbsolute: " + $('div:positionAbsolute').length);
+
+    $('div').filter(
+            function()
+            {
+                log('');
+                return $(this).css('position') === 'absolute';
+            }
+    ).each(
+            function()
+            {
+                log($(this).text());
+            }
+    );
+</script>
+
+</body>
+</html>

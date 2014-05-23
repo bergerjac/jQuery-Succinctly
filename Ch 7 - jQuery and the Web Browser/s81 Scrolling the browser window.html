@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <style>
+      li {
+         padding-bottom : 500px;
+         background-color: lightsalmon;
+      }
+      li.odd{
+         background-color: lightcyan;
+      }
+   </style>
+   <ul id="ulist">
+      <li id="li1" class="even"><a href="#" class="next">Next</a></li>
+      <li id="li2" class="odd"><a href="#" class=" next">Next</a>/<a href="#" class="prev">Previous</a></li>
+      <li id="li3" class="even"><a href="#" class="next">Next</a>/<a href="#" class="prev">Previous</a></li>
+      <li id="li4" class="odd"><a href="#" class="prev">Previous</a></li>
+   </ul>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var htmlAndBody = $('html, body');
+log('\0');
+      var anchors = $('a');
+      anchors.click(
+            function()
+            {
+               log(this);
+               log($(this).parent());
+               console.log($(this).parent());
+               console.log($(this).parent().next());
+
+            }
+      );
+      anchors.filter('.next').click(
+            function()
+            {
+               htmlAndBody.animate(
+                     {
+                        scrollTop: $(this).parent().next().find('a').offset().top
+                     },
+                     500
+               );
+            }
+      );
+
+      anchors.filter('.prev').click(
+            function()
+            {
+               htmlAndBody.animate(
+                     {
+                        scrollTop: $(this).parent().prev().find('a').offset().top
+                     },
+                     500
+               );
+            }
+      );
+   </script>
+
+</body>
+</html>

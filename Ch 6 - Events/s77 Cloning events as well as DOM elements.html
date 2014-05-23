@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <button id="button0">Add another button</button>
+   <a id="anchor0" href="#" class="clone">Add another link</a>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var nBtns = 0;
+      $('button').click(
+            function()
+            {
+               nBtns += 1;
+               var jqBtn = $(this);
+               jqBtn.clone(true).insertAfter(this);// clone element AND events
+               var buttonId = 'button{0}'.format(nBtns);
+               jqBtn.text(buttonId).unbind('click');
+               jqBtn.eq(0).attr('id', buttonId);
+            }
+      );
+
+      var nAnchors = 0;
+      $('.clone').click(
+            function(event)
+            {
+               log(event.target.id);
+               nAnchors += 1;
+               var jqAnchor = $(this);
+               jqAnchor.clone().insertAfter(this);// clone element NOT events
+               var anchorId = 'anchor{0}'.format(nAnchors);
+               jqAnchor.text(anchorId).unbind('click');
+               jqAnchor.eq(0).attr('id', anchorId);
+            }
+      );
+
+
+   </script>
+
+</body>
+</html>

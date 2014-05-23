@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div><span>stop</span></div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      $('div').click(
+            function(event)
+            {
+               log("div clicked");
+            }
+      );
+      $('span').click(
+            function(event)
+            {
+               log('span clicked');
+               // without this: DIV click handler invoked
+               event.stopPropagation();
+            }
+      );
+
+   </script>
+
+</body>
+</html>

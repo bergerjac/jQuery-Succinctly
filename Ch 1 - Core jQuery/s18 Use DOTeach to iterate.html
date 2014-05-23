@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+<script src="../js/vendor/jquery-1.10.2.js"></script>
+<script src="../js/main.js"></script>
+<script>
+    var body = $('body');
+    var elements = $('div');
+    elements.each(
+            function()
+            {
+                body.append('<br>' + this.id);
+            }
+    );
+
+</script>
+
+</body>
+</html>

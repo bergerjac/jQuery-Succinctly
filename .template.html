@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   forgot html
+
+
+   <script src="js/vendor/jquery-1.10.2.js"></script>
+   <script src="js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         var body = $('body');
+
+         var elements = $('');
+
+         elements.each(
+               function()
+               {
+                  log(this);
+                  log($(this).text());
+               }
+         );
+         log("");
+      })(jQuery);
+   </script>
+
+</body>
+</html>

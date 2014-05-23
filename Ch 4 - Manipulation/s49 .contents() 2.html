@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <p>jQuery gives me
+      <strong>more <span>power</span></strong> than any other web tool!
+   </p>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var body = $('body');
+
+      var allPs = $('p');
+      allPs.find('*') // select all nodes
+            .andSelf() // include <p>
+            .contents() // all child nodes, including text
+            .filter(function() {return this.nodeType == Node.TEXT_NODE;}) // Remove non-text nodes
+            .each(function(i, text) { log(text.nodeValue) }); // Alert text contained in wrapper set.
+
+      log('-');
+      var contents = allPs// p elements
+            .find('*')// (of p elements) all child nodes
+            .andSelf()// (all child nodes of p elements) include p
+            .contents();
+
+      contents// contents, including text
+            .filter(function()// remove NON-text elements
+                    {
+                       return this.nodeType === Node.TEXT_NODE;
+                    })
+            .each(function(i, text) { log(text.nodeValue) });
+
+      log('-----test');
+      contents.each(function(i, element)
+                    {
+                       log($(this).text());
+                    }
+      );
+
+   </script>
+
+</body>
+</html>

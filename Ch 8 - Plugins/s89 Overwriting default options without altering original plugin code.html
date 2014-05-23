@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="counter1"></div>
+   <div id="counter2"></div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $.fn.count = function(customOptions)
+         {
+            var options = $.extend({ }, $.fn.count.defaultOptions, customOptions);
+            return this.each(
+                  function()
+                  {
+                     var $this = $(this);
+                     $this.text(options.startCount + '');
+                     var myInterval = window.setInterval(
+                           function()
+                           {
+                              var currentCount = parseFloat($this.text());
+                              var newCount = currentCount + 1;
+                              $this.text(newCount + '');
+                           },
+                           1000);
+                  }
+            );
+         };
+         $.fn.count.defaultOptions = { startCount: 100 };
+         $.fn.count.defaultOptions.startCount = 200;
+         $('#counter1').count();
+         $('#counter2').count({startCount: 500});
+      })(jQuery);
+   </script>
+
+</body>
+</html>

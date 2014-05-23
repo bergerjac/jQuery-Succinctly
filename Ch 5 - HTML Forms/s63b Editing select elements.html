@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   no html
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      var selects = $('select');
+
+      // Add options to a select element at the end.
+      selects.append('<option value="">option</option>');
+
+      // Add options to the start of a select element.
+      selects.prepend('<option value="">option</option>');
+
+      // Replace all the options with new options.
+      selects.html('<option value="">option</option><option value="">option</option>');
+
+      // Replace items at a certain index using the :eq() selecting filter to
+      // select the element, and then replace it with the .replaceWith() method.
+      $('select option:eq(1)').replaceWith('<option value="">option</option>');
+
+      // Set the select elements' selected option to index 2.
+      $('select option:eq(2)').attr('selected', 'selected');
+
+      // Remove the last option from a select element.
+      $('select option:last').remove();
+
+      // Select an option from a select element via its
+      // order in the wrapper set using custom filters.
+      $('#select option:first');
+      $('#select option:last');
+      $('#select option:eq(3)');
+      $('#select option:gt(5)');
+      $('#select option:lt(3)');
+      $('#select option:not(:selected)');
+
+      // Get the text of the selected option(s), this will return the text of
+      // all options that are selected when dealing with a muli-select element.
+      $('select option:selected').text();
+
+      // Get the value attribute value of an option in a select element.
+      $('select option:last').val(); // Getting the :last option element.
+
+      // Get the index (0 index) of the selected option.
+      // Note: Does not work with multi-select elements.
+      $('select option').index($('select option:selected'));
+
+      // Insert an option after a particular position.
+      $('select option:eq(1)').after('<option value="">option</option>');
+
+      // Insert an option before a particular position.
+      $('select option:eq(3)').before('<option value="">option</option>');
+
+   </script>
+
+</body>
+</html>

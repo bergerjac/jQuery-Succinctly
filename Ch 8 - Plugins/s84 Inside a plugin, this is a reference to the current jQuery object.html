@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <link href="../css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+   <div id="counter1">hello there</div>
+
+   <script src="../js/vendor/jquery-1.10.2.js"></script>
+   <script src="../js/main.js"></script>
+
+   <script>
+      (function($)
+      {
+         $.fn.count = function()
+         {
+            // jqob
+            log(this);
+
+            console.log(this);
+            console.log($(this));
+
+            log(this.text());
+
+            // div
+            log(this[0]);
+
+            // counter1
+            log(this[0].id);
+         };
+         $('#counter1').count();
+      })(jQuery);
+   </script>
+
+</body>
+</html>
